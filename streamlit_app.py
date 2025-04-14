@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 import pydeck as pdk
-from mystlib import explore
+from mystlib import explore,plot2D
 
 st.set_page_config(layout = "wide", page_title = "Streamlit Data-centric App", page_icon = ":taxi:")
 
@@ -21,11 +21,16 @@ with st.sidebar:
     st.markdown(message)
     page = st.selectbox('Select:',
         ['View Data Using Dropdowns',
-        'Visualize Data on a Map',
         '2D Charts and Histograms', 
         '3D Charts and Histograms'])
-st.dataframe(data,width=1000)
 if page =='View Data Using Dropdowns':
     explore.run(data)
+
+if page =='2D Charts and Histograms':
+    plot2D.mean_passenger(data)
+    plot2D.distance_duration(data)
+
+if page=='3D Charts and Histograms':
+    st.write('this is the 3d section')
 
 
