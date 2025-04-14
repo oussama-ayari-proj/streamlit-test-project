@@ -18,5 +18,4 @@ def distance_duration(df):
            df, x = 'duration', y = 'distance',
            color = 'passenger_count',
            title = "Distance to Duration Relationship" )
-            
        st.plotly_chart(fig2, use_container_width = True)

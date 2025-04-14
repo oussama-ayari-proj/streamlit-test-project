@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 import pydeck as pdk
-from mystlib import explore,plot2D
+from mystlib import explore,plot2D,plot3D
 
 st.set_page_config(layout = "wide", page_title = "Streamlit Data-centric App", page_icon = ":taxi:")
 
@@ -31,6 +31,5 @@ if page =='2D Charts and Histograms':
     plot2D.distance_duration(data)
 
 if page=='3D Charts and Histograms':
-    st.write('this is the 3d section')
-
+    plot3D.plot1(data)
 
